@@ -5,7 +5,7 @@ var MultipartParserStub = GENTLY.stub('./multipart_parser', 'MultipartParser'),
     StreamStub = GENTLY.stub('stream', 'Stream'),
     FileStub = GENTLY.stub('./file');
 
-var formidable = require(common.lib + '/index'),
+var formidable = require(common.lib + '/incoming_form'),
     IncomingForm = formidable.IncomingForm,
     events = require('events'),
     fs = require('fs'),
@@ -48,12 +48,6 @@ test(function constructor() {
   (function testSimpleConstructor() {
     gently.expect(EventEmitterStub, 'call');
     var form = IncomingForm();
-    assert.ok(form instanceof IncomingForm);
-  })();
-
-  (function testSimpleConstructorShortcut() {
-    gently.expect(EventEmitterStub, 'call');
-    var form = formidable();
     assert.ok(form instanceof IncomingForm);
   })();
 });

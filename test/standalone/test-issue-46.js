@@ -1,5 +1,5 @@
 var http       = require('http'),
-    formidable = require('../../lib/index'),
+    formidable = require('../../lib/incoming_form'),
     request    = require('request'),
     assert     = require('assert');
 

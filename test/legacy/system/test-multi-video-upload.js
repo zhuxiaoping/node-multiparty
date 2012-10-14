@@ -3,7 +3,7 @@ var BOUNDARY = '---------------------------10102754414578508781458777923',
     FIXTURE = TEST_FIXTURES+'/multi_video.upload',
     fs = require('fs'),
     http = require('http'),
-    formidable = require(common.lib + '/index'),
+    formidable = require(common.lib + '/incoming_form'),
     server = http.createServer();
 
 server.on('request', function(req, res) {

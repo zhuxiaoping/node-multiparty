@@ -11,10 +11,7 @@
     "utest": "0.0.3",
     "request": "~2.11.4"
   },
-  "directories": {
-    "lib": "./lib"
-  },
-  "main": "./lib/index",
+  "main": "./lib/incoming_form",
   "scripts": {
     "test": "node test/run.js",
     "clean": "rm test/tmp/*"
@@ -28,6 +25,5 @@
   },
   "bugs": {
     "url": "http://github.com/felixge/node-formidable/issues"
-  },
-  "optionalDependencies": {}
+  }
 }
