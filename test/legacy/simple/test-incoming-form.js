@@ -44,12 +44,6 @@ test(function constructor() {
   assert.strictEqual(form._fieldsSize, 0);
   assert.ok(form instanceof EventEmitterStub);
   assert.equal(form.constructor.name, 'IncomingForm');
-
-  (function testSimpleConstructor() {
-    gently.expect(EventEmitterStub, 'call');
-    var form = IncomingForm();
-    assert.ok(form instanceof IncomingForm);
-  })();
 });
 
 test(function parse() {
