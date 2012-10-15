@@ -4,7 +4,6 @@
   "homepage": "https://github.com/felixge/node-formidable",
   "version": "1.0.11",
   "devDependencies": {
-    "gently": "0.8.0",
     "findit": "0.1.1",
     "hashish": "0.0.4",
     "urun": "~0.0.6",

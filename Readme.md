@@ -81,21 +81,17 @@ Creates a new incoming form.
 Sets encoding for incoming form fields.
 
 
-    form.uploadDir = process.env.TMP || process.env.TMPDIR || process.env.TEMP || '/tmp' || process.cwd();
+    form.uploadDir = os.tmpDir()
 
-The directory for placing file uploads in. You can move them later on using
-`fs.rename()`. The default directory is picked at module load time depending on
-the first existing directory from those listed above.
+The directory for placing file uploads in. You can move them later on.
+Be careful using `fs.rename()`. If `uploadDir` is on a different device than
+your destination, you'll have to use something like
+[mv](https://github.com/superjoe30/node-mv) to avoid an error. But the best
+solution is to have `uploadDir` be on the same device as your destination so
+that moving files doesn't require a file copy.
 
-
-    form.keepExtensions = false;
-
-If you want the files written to `form.uploadDir` to include the extensions of the original files, set this property to `true`.
-
-
-    form.type
-
-Either 'multipart' or 'urlencoded' depending on the incoming request.
+The default directory is the one that node.js reports as
+your operating system's temporary directory.
 
 
     form.maxFieldsSize = 2 * 1024 * 1024;
